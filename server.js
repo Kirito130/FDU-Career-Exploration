@@ -256,6 +256,15 @@ app.get('/about', (req, res) => {
   });
 });
 
+/**
+ * Contact page
+ */
+app.get('/contact', (req, res) => {
+  res.render('contact', {
+    title: 'Contact Us'
+  });
+});
+
 // API Routes
 
 /**

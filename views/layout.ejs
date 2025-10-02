@@ -52,6 +52,11 @@
                             <i class="fas fa-info-circle me-2"></i>About
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-medium px-3 py-2 rounded-pill <%= (title && title.includes('Contact')) ? 'active' : '' %>" href="/contact">
+                            <i class="fas fa-envelope me-2"></i>Contact
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -67,50 +72,54 @@
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-6">
-                    <h5 class="fw-bold mb-3">
+                    <h5 class="fw-bold mb-3 text-dark">
                         <i class="fas fa-briefcase me-2 text-warning"></i><%= appName %>
                     </h5>
-                    <p class="text-light-emphasis mb-3">Discover your perfect career path using O*NET occupational data and NACE competencies.</p>
+                    <p class="text-light-emphasis mb-3 fs-5">Discover your perfect career path using O*NET occupational <br> data and NACE competencies.</p>
                     <div class="d-flex gap-3">
-                        <a href="#" class="text-light-emphasis text-decoration-none">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="text-light-emphasis text-decoration-none">
+                        <a href="https://www.linkedin.com/groups/4065875/" class="text-light-emphasis text-decoration-none fs-4" target="_blank" title="LinkedIn">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="#" class="text-light-emphasis text-decoration-none">
-                            <i class="fab fa-github"></i>
+                        <a href="https://www.instagram.com/fdumetrocareer/" class="text-light-emphasis text-decoration-none fs-4" target="_blank" title="Career Development Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/FlorhamCareerDevelopment" class="text-light-emphasis text-decoration-none fs-4" target="_blank" title="Florham Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.facebook.com/FDUMetroCareerCenter/" class="text-light-emphasis text-decoration-none fs-4" target="_blank" title="Metropolitan Facebook">
+                            <i class="fab fa-facebook"></i>
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <h6 class="fw-semibold mb-3">Quick Links</h6>
+                    <h6 class="fw-semibold mb-3 text-dark fs-5">Quick Links</h6>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="/competencies" class="text-light-emphasis text-decoration-none">By Competencies</a></li>
-                        <li class="mb-2"><a href="/majors" class="text-light-emphasis text-decoration-none">By Major</a></li>
-                        <li class="mb-2"><a href="/about" class="text-light-emphasis text-decoration-none">About</a></li>
+                        <li class="mb-2"><a href="/competencies" class="text-light-emphasis text-decoration-none fs-5">By Competencies</a></li>
+                        <li class="mb-2"><a href="/majors" class="text-light-emphasis text-decoration-none fs-5">By Major</a></li>
+                        <li class="mb-2"><a href="/about" class="text-light-emphasis text-decoration-none fs-5">About</a></li>
+                        <li class="mb-2"><a href="/contact" class="text-light-emphasis text-decoration-none fs-5">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3">
-                    <h6 class="fw-semibold mb-3">Resources</h6>
+                    <h6 class="fw-semibold mb-3 text-dark fs-5">Resources</h6>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="https://www.onetcenter.org/" class="text-light-emphasis text-decoration-none" target="_blank">O*NET Online</a></li>
-                        <li class="mb-2"><a href="https://www.naceweb.org/" class="text-light-emphasis text-decoration-none" target="_blank">NACE</a></li>
-                        <li class="mb-2"><a href="#" class="text-light-emphasis text-decoration-none">Help Center</a></li>
-                        <li class="mb-2"><a href="#" class="text-light-emphasis text-decoration-none">Contact</a></li>
+                        <li class="mb-2"><a href="https://www.onetcenter.org/" class="text-light-emphasis text-decoration-none fs-5" target="_blank">O*NET Online</a></li>
+                        <li class="mb-2"><a href="https://www.naceweb.org/" class="text-light-emphasis text-decoration-none fs-5" target="_blank">NACE</a></li>
+                        <li class="mb-2"><a href="https://fdu.edu/academics/centers-institutes/career-development/" class="text-light-emphasis text-decoration-none fs-5" target="_blank">FDU Career Center</a></li>
+                        <li class="mb-2"><a href="mailto:career@fdu.edu" class="text-light-emphasis text-decoration-none fs-5">Contact</a></li>
                     </ul>
                 </div>
             </div>
             <hr class="my-4 border-secondary">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <p class="mb-0 text-light-emphasis">
-                        <small>&copy; 2024 <%= appName %>. All rights reserved.</small>
+                    <p class="mb-0 text-light-emphasis fs-5">
+                        &copy; 2024 <%= appName %>. All rights reserved.
                     </p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <p class="mb-0 text-light-emphasis">
-                        <small>Powered by O*NET and NACE data</small>
+                    <p class="mb-0 text-light-emphasis fs-5">
+                        Powered by O*NET and NACE data
                     </p>
                 </div>
             </div>
