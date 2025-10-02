@@ -74,8 +74,8 @@
                         <p class="card-text text-muted mb-4">
                             Get comprehensive job information including skills, knowledge, and education requirements.
                         </p>
-                        <a href="/stats" class="btn btn-info">
-                            <i class="fas fa-arrow-right me-2"></i>View Stats
+                        <a href="/about" class="btn btn-info">
+                            <i class="fas fa-arrow-right me-2"></i>Learn More
                         </a>
                     </div>
                 </div>
@@ -165,61 +165,6 @@
     </div>
 </section>
 
-<!-- Statistics Section -->
-<% if (competencyStats && majorStats) { %>
-<section class="py-5 bg-light">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center mb-5">
-                <h2 class="h2 fw-bold mb-3">Application Statistics</h2>
-                <p class="lead text-muted">Comprehensive data coverage and mapping statistics</p>
-            </div>
-        </div>
-        <div class="row g-4">
-            <div class="col-md-6">
-                <div class="card text-center">
-                    <div class="card-body p-4">
-                        <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                            <i class="fas fa-brain fs-4"></i>
-                        </div>
-                        <h4 class="card-title fw-bold mb-3">Competency Mappings</h4>
-                        <div class="row text-center">
-                            <div class="col-6">
-                                <h2 class="fw-bold mb-1 text-primary"><%= competencyStats.totalMappings %></h2>
-                                <p class="mb-0 text-muted">Total Mappings</p>
-                            </div>
-                            <div class="col-6">
-                                <h2 class="fw-bold mb-1 text-primary"><%= competencyStats.coveragePercentage %>%</h2>
-                                <p class="mb-0 text-muted">Job Coverage</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card text-center">
-                    <div class="card-body p-4">
-                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                            <i class="fas fa-graduation-cap fs-4"></i>
-                        </div>
-                        <h4 class="card-title fw-bold mb-3">Major Mappings</h4>
-                        <div class="row text-center">
-                            <div class="col-6">
-                                <h2 class="fw-bold mb-1 text-success"><%= majorStats.totalMappings %></h2>
-                                <p class="mb-0 text-muted">Total Mappings</p>
-                            </div>
-                            <div class="col-6">
-                                <h2 class="fw-bold mb-1 text-success"><%= majorStats.coveragePercentage %>%</h2>
-                                <p class="mb-0 text-muted">Job Coverage</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<% } %>
 
 <!-- Results Section (Hidden by default) -->
 <section id="resultsSection" class="py-5 bg-light" style="display: none;">

@@ -90,15 +90,11 @@ app.use((req, res, next) => {
  */
 app.get('/', async (req, res) => {
   try {
-    // Get statistics for display
-    let competencyStats = null;
-    let majorStats = null;
+    // Get data for display
     let competencies = [];
     let majors = [];
     
     try {
-      competencyStats = await competencyService.getCompetencyMappingStats();
-      majorStats = await majorService.getMajorMappingStats();
       competencies = await competencyService.getAllCompetencies();
       majors = await majorService.getAllMajors();
     } catch (dbError) {
@@ -135,8 +131,6 @@ app.get('/', async (req, res) => {
     
     res.render('index', {
       title: 'Home',
-      competencyStats,
-      majorStats,
       competencies,
       majors
     });
@@ -252,27 +246,6 @@ app.get('/job/:onetsocCode', async (req, res) => {
   }
 });
 
-/**
- * Statistics page
- */
-app.get('/stats', async (req, res) => {
-  try {
-    const competencyStats = await competencyService.getCompetencyMappingStats();
-    const majorStats = await majorService.getMajorMappingStats();
-    
-    res.render('stats', {
-      title: 'Application Statistics',
-      competencyStats,
-      majorStats
-    });
-  } catch (error) {
-    console.error('Error loading stats page:', error);
-    res.render('error', {
-      title: 'Error',
-      message: 'Failed to load statistics'
-    });
-  }
-});
 
 /**
  * About page
