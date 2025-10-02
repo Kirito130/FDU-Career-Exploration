@@ -1,0 +1,98 @@
+<!-- Page Header -->
+<section class="bg-gradient-primary text-white py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-4 fw-bold mb-3 fade-in">
+                    <i class="fas fa-briefcase me-3 text-warning"></i>Job Details
+                </h1>
+                <p class="lead mb-0 fade-in" style="animation-delay: 0.2s;">
+                    Comprehensive information about this career opportunity
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Job Details Content -->
+<section class="py-5 bg-white">
+    <div class="container">
+        <% if (job) { %>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-header bg-primary text-white">
+                            <h2 class="mb-0 fw-bold">
+                                <i class="fas fa-briefcase me-2"></i><%= job.title %>
+                            </h2>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <h5 class="text-primary mb-3">Job Description</h5>
+                                    <p class="text-muted mb-4"><%= job.description %></p>
+                                    
+                                    <h5 class="text-primary mb-3">Key Responsibilities</h5>
+                                    <ul class="list-unstyled">
+                                        <% if (job.tasks && job.tasks.length > 0) { %>
+                                            <% job.tasks.forEach(task => { %>
+                                                <li class="mb-2">
+                                                    <i class="fas fa-check text-success me-2"></i>
+                                                    <%= task %>
+                                                </li>
+                                            <% }); %>
+                                        <% } else { %>
+                                            <li class="text-muted">No specific tasks available</li>
+                                        <% } %>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card bg-light">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-primary">Job Information</h6>
+                                            <div class="mb-3">
+                                                <strong>O*NET Code:</strong><br>
+                                                <code><%= job.onetsoc_code %></code>
+                                            </div>
+                                            <div class="mb-3">
+                                                <strong>Match Score:</strong><br>
+                                                <span class="badge bg-success"><%= job.match_score || 'N/A' %>%</span>
+                                            </div>
+                                            <div class="mb-3">
+                                                <strong>Education Level:</strong><br>
+                                                <span class="text-muted"><%= job.education_level || 'Not specified' %></span>
+                                            </div>
+                                            <div class="mb-3">
+                                                <strong>Experience Required:</strong><br>
+                                                <span class="text-muted"><%= job.experience_required || 'Not specified' %></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% } else { %>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-body text-center p-5">
+                            <div class="display-1 text-warning mb-4">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <h2 class="mb-4">Job Not Found</h2>
+                            <p class="lead text-muted mb-4">
+                                The requested job details could not be found.
+                            </p>
+                            <a href="/" class="btn btn-primary">
+                                <i class="fas fa-home me-2"></i>Go Home
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</section>

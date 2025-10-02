@@ -1,0 +1,120 @@
+<!-- Page Header -->
+<section class="bg-gradient-info text-white py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-4 fw-bold mb-3 fade-in">
+                    <i class="fas fa-chart-bar me-3 text-warning"></i>Application Statistics
+                </h1>
+                <p class="lead mb-0 fade-in" style="animation-delay: 0.2s;">
+                    System health and data coverage statistics
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Statistics Content -->
+<section class="py-5 bg-white">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Competency Statistics -->
+            <div class="col-lg-6">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0 fw-bold">
+                            <i class="fas fa-brain me-2"></i>Competency Mappings
+                        </h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <% if (competencyStats) { %>
+                            <div class="row text-center">
+                                <div class="col-6">
+                                    <h2 class="fw-bold mb-1 text-primary"><%= competencyStats.totalMappings %></h2>
+                                    <p class="mb-0 text-muted">Total Mappings</p>
+                                </div>
+                                <div class="col-6">
+                                    <h2 class="fw-bold mb-1 text-primary"><%= competencyStats.coveragePercentage %>%</h2>
+                                    <p class="mb-0 text-muted">Job Coverage</p>
+                                </div>
+                            </div>
+                        <% } else { %>
+                            <div class="alert alert-warning">
+                                <i class="fas fa-exclamation-triangle me-2"></i>
+                                Competency statistics not available
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Major Statistics -->
+            <div class="col-lg-6">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0 fw-bold">
+                            <i class="fas fa-graduation-cap me-2"></i>Major Mappings
+                        </h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <% if (majorStats) { %>
+                            <div class="row text-center">
+                                <div class="col-6">
+                                    <h2 class="fw-bold mb-1 text-success"><%= majorStats.totalMappings %></h2>
+                                    <p class="mb-0 text-muted">Total Mappings</p>
+                                </div>
+                                <div class="col-6">
+                                    <h2 class="fw-bold mb-1 text-success"><%= majorStats.coveragePercentage %>%</h2>
+                                    <p class="mb-0 text-muted">Job Coverage</p>
+                                </div>
+                            </div>
+                        <% } else { %>
+                            <div class="alert alert-warning">
+                                <i class="fas fa-exclamation-triangle me-2"></i>
+                                Major statistics not available
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- System Health -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0 fw-bold">
+                            <i class="fas fa-heartbeat me-2"></i>System Health
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 text-center">
+                                <div class="mb-3">
+                                    <i class="fas fa-database fa-2x text-primary"></i>
+                                </div>
+                                <h6>Database Status</h6>
+                                <span class="badge bg-success">Connected</span>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="mb-3">
+                                    <i class="fas fa-chart-line fa-2x text-success"></i>
+                                </div>
+                                <h6>API Status</h6>
+                                <span class="badge bg-success">Operational</span>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="mb-3">
+                                    <i class="fas fa-clock fa-2x text-info"></i>
+                                </div>
+                                <h6>Response Time</h6>
+                                <span class="badge bg-info">< 100ms</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
