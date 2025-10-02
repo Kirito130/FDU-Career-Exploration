@@ -63,16 +63,16 @@ app.use(morgan('combined'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static files
-app.use(express.static(path.join(__dirname, 'public'), {
-  maxAge: '1d', // Cache static files for 1 day
-  etag: true,
-  lastModified: true
+// Serve static files at /static mount point (Render best practice)
+app.use('/static', express.static(path.join(__dirname, 'public'), {
+  maxAge: '1y',
+  immutable: true,
+  extensions: ['css', 'js', 'png', 'jpg', 'jpeg', 'svg', 'webp']
 }));
 
 // Debug middleware for static files
 app.use((req, res, next) => {
-  if (req.url.startsWith('/css/') || req.url.startsWith('/js/')) {
+  if (req.url.startsWith('/static/')) {
     console.log(`📁 Serving static file: ${req.url}`);
   }
   next();
