@@ -9,6 +9,7 @@
     "dev": "node --watch --no-deprecation server.js",
     "web": "node --no-deprecation server.js",
     "web:dev": "nodemon --no-deprecation server.js",
+    "build": "echo 'No build step required for static files'",
     "deploy": "node deploy.js",
     "test-deployment": "node test-deployment.js"
   },

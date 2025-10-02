@@ -63,20 +63,29 @@ app.use(morgan('combined'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static files at /static mount point (Render best practice)
-app.use('/static', express.static(path.join(__dirname, 'public'), {
-  maxAge: '1y',
-  immutable: true,
-  extensions: ['css', 'js', 'png', 'jpg', 'jpeg', 'svg', 'webp']
-}));
-
-// Debug middleware for static files
+// Debug middleware for static files (must be before static serving)
 app.use((req, res, next) => {
-  if (req.url.startsWith('/static/')) {
-    console.log(`📁 Serving static file: ${req.url}`);
+  if (req.url.match(/\.(css|js|png|jpg|jpeg|svg|webp)$/)) {
+    console.log(`📁 Requesting static file: ${req.url}`);
   }
   next();
 });
+
+// Serve static files - Render requires this specific configuration
+app.use(express.static(path.join(__dirname, 'public'), {
+  maxAge: '1d',
+  etag: true,
+  lastModified: true,
+  setHeaders: (res, path) => {
+    console.log(`📁 Serving file: ${path}`);
+    if (path.endsWith('.css')) {
+      res.setHeader('Content-Type', 'text/css');
+    }
+    if (path.endsWith('.js')) {
+      res.setHeader('Content-Type', 'application/javascript');
+    }
+  }
+}));
 
 // Set view engine
 app.set('view engine', 'ejs');
