@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * O*NET Careers App - Main Entry Point
+ * FDU Careers Exploration - Main Entry Point
  * CLI application for career guidance based on NACE competencies and course majors
  * 
  * Usage: node index.js
@@ -32,7 +32,7 @@ process.on('SIGINT', () => {
 });
 
 // Start the application
-console.log(chalk.cyan.bold('🚀 Starting O*NET Careers App...\n'));
+console.log(chalk.cyan.bold('🚀 Starting FDU Careers Exploration...\n'));
 
 startApp().catch((error) => {
   console.error(chalk.red.bold('\n❌ Fatal Error:'), error.message);

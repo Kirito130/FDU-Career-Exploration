@@ -1,14 +1,16 @@
 {
   "name": "onet-careers-app",
   "version": "1.0.0",
-  "description": "O*NET Careers App - CLI backend for career guidance based on competencies and majors",
+  "description": "FDU Careers Exploration - CLI backend for career guidance based on competencies and majors",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "dev": "node --watch index.js",
+    "start": "node --no-deprecation server.js",
+    "dev": "node --watch --no-deprecation server.js",
     "web": "node --no-deprecation server.js",
-    "web:dev": "nodemon --no-deprecation server.js"
+    "web:dev": "nodemon --no-deprecation server.js",
+    "deploy": "node deploy.js",
+    "test-deployment": "node test-deployment.js"
   },
   "keywords": [
     "onet",

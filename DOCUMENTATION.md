@@ -1,4 +1,4 @@
-# O*NET Careers App - Complete Documentation
+# FDU Careers Exploration - Complete Documentation
 
 A production-ready CLI-based career guidance application that helps students discover career paths based on their NACE competencies and course majors using a pre-populated O*NET occupational database.
 
@@ -17,7 +17,7 @@ A production-ready CLI-based career guidance application that helps students dis
 
 ## Overview
 
-The O*NET Careers App is a production-ready command-line application that provides personalized career guidance by matching user competencies and academic majors with relevant occupations from a pre-populated O*NET database. The application uses a simplified 3-table database structure for optimal performance and reliability.
+FDU Careers Exploration is a production-ready command-line application that provides personalized career guidance by matching user competencies and academic majors with relevant occupations from a pre-populated O*NET database. The application uses a simplified 3-table database structure for optimal performance and reliability.
 
 ## Features
 

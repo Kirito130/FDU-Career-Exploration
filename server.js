@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * O*NET Careers App - Web Server
+ * FDU Careers Exploration - Web Server
  * Express.js web application for career guidance based on NACE competencies and course majors
  * 
  * Usage: node server.js
@@ -78,7 +78,7 @@ app.set('layout extractStyles', true);
 
 // Global variables for templates
 app.use((req, res, next) => {
-  res.locals.appName = 'O*NET Careers App';
+  res.locals.appName = 'FDU Careers Exploration';
   res.locals.appDescription = 'Discover Your Perfect Career Path';
   next();
 });
@@ -252,7 +252,7 @@ app.get('/job/:onetsocCode', async (req, res) => {
  */
 app.get('/about', (req, res) => {
   res.render('about', {
-    title: 'About O*NET Careers App'
+    title: 'About FDU Careers Exploration'
   });
 });
 

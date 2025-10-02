@@ -1,5 +1,5 @@
 /**
- * CLI Interface for O*NET Careers App
+ * CLI Interface for FDU Careers Exploration
  * Provides colorful, interactive command-line interface for user interactions
  */
 
@@ -415,7 +415,7 @@ export function displaySuccess(message) {
  * Display about information
  */
 export function displayAbout() {
-  console.log(chalk.cyan.bold('\n📖 About O*NET Careers App\n'));
+  console.log(chalk.cyan.bold('\n📖 About FDU Careers Exploration\n'));
   console.log(chalk.white('This application helps you discover career paths based on:'));
   console.log(chalk.white('• Your top 3 NACE competencies (strengths)'));
   console.log(chalk.white('• Your course major or field of study'));
@@ -433,7 +433,7 @@ export function displayAbout() {
  * Display goodbye message
  */
 export function displayGoodbye() {
-  console.log(chalk.cyan.bold('\n👋 Thank you for using O*NET Careers App!'));
+  console.log(chalk.cyan.bold('\n👋 Thank you for using FDU Careers Exploration!'));
   console.log(chalk.yellow('Good luck with your career exploration! 🚀\n'));
 }
 

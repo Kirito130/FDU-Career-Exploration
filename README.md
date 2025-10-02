@@ -1,4 +1,4 @@
-# O*NET Careers App
+# FDU Careers Exploration
 
 A CLI-based career guidance application that helps students discover career paths based on their NACE competencies and course majors using the comprehensive O*NET occupational database.
 
