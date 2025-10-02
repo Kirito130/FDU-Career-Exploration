@@ -6,7 +6,7 @@
                 <h1 class="display-4 fw-bold mb-3 fade-in">
                     <i class="fas fa-brain me-3 text-warning"></i>Find Careers by Competencies
                 </h1>
-                <p class="lead mb-0 fade-in" style="animation-delay: 0.2s;">
+                <p class="lead mb-0 fade-in" style="animation-delay: 0.2s; color: rgba(255, 255, 255, 0.95); text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);">
                     Select your top 3 NACE competencies to discover matching career opportunities
                 </p>
             </div>
@@ -33,7 +33,7 @@
                                     <% if (competencies) { %>
                                         <% competencies.forEach((competency, index) => { %>
                                             <div class="col-md-6">
-                                                <div class="form-check p-3 border rounded-3 hover-lift" style="background: var(--gray-50);">
+                                                <div class="form-check p-3 border rounded-3 hover-lift competency-card">
                                                     <input class="form-check-input competency-checkbox" type="checkbox" 
                                                            name="competencies" value="<%= competency %>" 
                                                            id="comp-<%= index %>">
@@ -41,7 +41,7 @@
                                                         <i class="fas fa-<%= getCompetencyIcon(competency) %> me-2 text-primary"></i>
                                                         <%= competency %>
                                                     </label>
-                                                    <div class="form-text text-muted mt-2">
+                                                    <div class="form-text mt-2">
                                                         <%= getCompetencyDescription(competency) %>
                                                     </div>
                                                 </div>

@@ -6,7 +6,7 @@
                 <h1 class="display-4 fw-bold mb-3 fade-in">
                     <i class="fas fa-graduation-cap me-3 text-warning"></i>Find Careers by Major
                 </h1>
-                <p class="lead mb-0 fade-in" style="animation-delay: 0.2s;">
+                <p class="lead mb-0 fade-in" style="animation-delay: 0.2s; color: rgba(255, 255, 255, 0.95); text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);">
                     Select your course major to explore related career opportunities
                 </p>
             </div>
@@ -33,7 +33,7 @@
                                     <% if (majors) { %>
                                         <% majors.forEach((major, index) => { %>
                                             <div class="col-md-6">
-                                                <div class="form-check p-3 border rounded-3 hover-lift" style="background: var(--gray-50);">
+                                                <div class="form-check p-3 border rounded-3 hover-lift major-card">
                                                     <input class="form-check-input major-radio" type="radio" 
                                                            name="major" value="<%= major %>" 
                                                            id="major-<%= index %>">
@@ -41,7 +41,7 @@
                                                         <i class="fas fa-<%= getMajorIcon(major) %> me-2 text-success"></i>
                                                         <%= major %>
                                                     </label>
-                                                    <div class="form-text text-muted mt-2">
+                                                    <div class="form-text mt-2">
                                                         <%= getMajorDescription(major) %>
                                                     </div>
                                                 </div>
