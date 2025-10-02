@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: fdu-careers-exploration
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SUPABASE_URL
+        value: https://haqlioealqupvbnzbnqt.supabase.co
+      - key: SUPABASE_ANON_KEY
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhhcWxpb2VhbHF1cHZibnpibnF0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTczNDMxODIsImV4cCI6MjA3MjkxOTE4Mn0.TzY9c1L5RFyB6HBaFmxjn7qlz_4PBpPZf9nUQmU8vHk
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhhcWxpb2VhbHF1cHZibnpibnF0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1NzM0MzE4MiwiZXhwIjoyMDcyOTE5MTgyfQ.y3HreDT2p5WJleSuQCbQnkl38Klxx-a5GQBuip5Y-Iw
+      - key: DATABASE_URL
+        value: postgresql://postgres:[iNDOJIN#130]@db.haqlioealqupvbnzbnqt.supabase.co:5432/postgres
+      - key: PORT
+        value: 3000
+      - key: BATCH_SIZE
+        value: 1000
+      - key: MAX_RETRIES
+        value: 3
+      - key: RETRY_DELAY
+        value: 1000

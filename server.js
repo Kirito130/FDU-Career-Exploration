@@ -64,7 +64,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Serve static files
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'), {
+  maxAge: '1d', // Cache static files for 1 day
+  etag: true,
+  lastModified: true
+}));
+
+// Debug middleware for static files
+app.use((req, res, next) => {
+  if (req.url.startsWith('/css/') || req.url.startsWith('/js/')) {
+    console.log(`📁 Serving static file: ${req.url}`);
+  }
+  next();
+});
 
 // Set view engine
 app.set('view engine', 'ejs');

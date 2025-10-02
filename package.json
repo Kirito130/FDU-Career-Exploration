@@ -10,8 +10,7 @@
     "web": "node --no-deprecation server.js",
     "web:dev": "nodemon --no-deprecation server.js",
     "deploy": "node deploy.js",
-    "test-deployment": "node test-deployment.js",
-    "verify-css": "node verify-css.js"
+    "test-deployment": "node test-deployment.js"
   },
   "keywords": [
     "onet",
