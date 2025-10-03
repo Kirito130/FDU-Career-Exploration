@@ -245,7 +245,8 @@ app.get('/majors', async (req, res) => {
 app.get('/job/:onetsocCode', async (req, res) => {
   try {
     const { onetsocCode } = req.params;
-    const jobDetails = await competencyService.getDetailedJobInfo(onetsocCode);
+    const decodedOnetsocCode = decodeURIComponent(onetsocCode);
+    const jobDetails = await competencyService.getDetailedJobInfo(decodedOnetsocCode);
     
     if (!jobDetails) {
       return res.render('error', {
